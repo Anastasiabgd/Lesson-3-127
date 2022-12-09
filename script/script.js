@@ -17,8 +17,8 @@ function sumPositive(...n){
 
 }
 
-let result = sumPositive(2, -9, 5, 11, -30, 100, -8, -11, -4, 5, -6, 8);
-console.log(result);
+let result1 = sumPositive(2, -9, 5, 11, -30, 100, -8, -11, -4, 5, -6, 8);
+console.log(result1);
 
     
     
@@ -50,35 +50,54 @@ let user = {
     isloggedin: true
   }
 
-  let names = function(x){
-    if(isloggedin == true){
-        return ('firstname') + " " + ('lastname');
-    }false;
+  function printNameUser(user){
+    if(user.isloggedin){
+        return user.firstname + " " + user.lastname;
+    } 
+        return false;
+    
   }
-  let fullName = names('true');
-  console.log(fullName);
+  let resultFunction = printNameUser(user);
+  console.log(resultFunction);
 
-//   ვერ გამოვიყვანე
+ 
 
 
  
 
 // HW 4
 
-function maxnum(...numbers) {
-    let x = numbers[0];
+function getMax(...array) {
+  // console.log(Math.max(...array));
 
-    numbers.forEach(function(y){
-        if(y > x) x = y;
-    });
-    return x
+  let maxValue = 0;
+  for(let item of array){
+    if(item > maxValue){
+        maxValue = item;
+    }
+  }
+  return maxValue;
+  
 }
-maxnum(1, 20, -3, 45, -91, 105);
+let result = getMax(1, 20, -3, 45, -91, 105);
+
+console.log(result);
 
 
 
 // HW 5
 
-// let array = ['html', 'css', 'python', 'javascript', 'bootstrap'];
+let array = ['html', 'css', 'python', 'javascript', 'bootstrap'];
+
+for(let item of array){
+    if(item.length > 4 && item.includes('av')){
+        console.log(item);
+    }
+}
 
 
+array.forEach(function(element) {
+    if (element.length > 4 && element.includes('av')) {
+        console.log(element);
+    }
+})
